@@ -262,11 +262,11 @@ career here, you'll have to answer the following:
 - What, in your opinion, is an important part of code reviews? That is, what is
   something you pay attention to when you review code, and that you appreciate
   when others do the same for your code? 
-    ### I personally believe that readability is the most important factor in code reviews. I appreciate when code is neat and practical  so I can easily make sense of the code. I would hope that this leads to efficiency within the code, which is something that I would like others to point out in my code as well. I also look for comments throughout the code just incase the code cannot be simplified and an explanation of what's within the code is very helpful. I need to practice making more comments within my code so it's easier to explain to anyone reviewing my code as well.###   
+    ### I personally believe that readability is the most important factor in code reviews. I appreciate when code is neat and practical  so I can easily make sense of the code. I would hope that this leads to efficiency within the code, which is something that I would like others to point out in my code as well. I also look for comments throughout the code just incase the code cannot be simplified and an explanation of what's within the code is very helpful. I need to practice making more comments within my code so it's easier to explain to anyone reviewing my code as well.
 - We have an awful lot of computers here, and it gets pretty confusing with
   slightly different things running on all of them. How could containers help us
   improve this situation?
-    ### Containers can increase portability since applications which run in containers can easily be deployed to different operating systems and platforms. And since they are being deployed through containers, the applications usually run the same regardless where or through what they're deployed by. This leads to reliability and efficieny through containers.### 
+    ### Containers can increase portability since applications which run in containers can easily be deployed to different operating systems and platforms. And since they are being deployed through containers, the applications usually run the same regardless where or through what they're deployed by. This leads to reliability and efficieny through containers.
 Answer both of these questions (baseline ~5 sentences) here in text.
 
 ### Part 8 - Turn it in!
