@@ -1,4 +1,5 @@
-from random import randint, sample, uniform
+import random
+from random import randint, sample, uniform, choice
 from acme import Product
 
 # Useful to use with random.sample to generate names
@@ -8,28 +9,33 @@ nouns = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 
 def generate_products(num_products=30):
     products = []
-    x = random.choice(adjectives)
-    y = random.choice(nouns)
-    name = f'{x} {y}'
-    price = random.randint(5, 100)
-    weight = random.randint(5, 100)
-    flammability = random.uniform(0, 2.5)
-    products[i] = product(name, price, weight, flammability)
+    for _ in range(num_products):
+        name = sample(adjectives, 1)[0] + " " + sample(nouns, 1)[0]
+        price = randint(5, 100)
+        weight = randint(5, 100)
+        flammability = uniform(0.0, 2.5)
+        prod = Product(name, price, weight, flammability)
+        products.append(prod)
     return products
 
-
 def inventory_report(products):
-    prices = []
-    weights = []
-    flamm = []
-    for p in products:
-        prices.append(p.price)
-        weights.append(p.weight)
-        flamm.append(p.flammability)
-    avg_p = sum(prices) / len(prices)
-    avg_w = sum(weights) / len(weights)
-    avg_f = sum(flamm) / len(flamm)
+    num_prod = len(products)
 
-    print(avg_p, avg_w, avg_f)
+    total_price, total_weight, total_flammability = 0, 0, 0
+    for product in products:
+        total_price += product.price
+        total_weight += product.weight
+        total_flammability += product.flammability
+
+    avg_price = total_price / num_prod
+    avg_weight = total_weight / num_prod
+    avg_flammability = total_flammability / num_prod
+
+    print("ACME CORPORATION OFFICIAL INVENTORY REPORT")
+    print("Unique product names:", len(set(products)))
+    print("Average price:", avg_price)
+    print("Average weight:", avg_weight)
+    print("Average flammability:", avg_flammability)
+    
 if __name__ == '__main__':
     inventory_report(generate_products())

@@ -1,5 +1,5 @@
 import unittest
-from acme import product
+from acme import Product
 from acme_report import generate_products, adjectives, nouns
 
 
@@ -40,11 +40,14 @@ class AcmeReportTests(unittest.TestCase):
     def test_default_num_products(self):
         prod_list = generate_products()
         self.assertEqual(len(prod_list), 30)
+
 # Valid names?
-    products = generate_products()
-    for x in products:
-            self.assertIn(x.name.split()[0], adjectives)
-            self.assertIn(x.name.split()[1], nouns)
+    def test_legal_names(self):
+        self.products = generate_products()
+        for prod in self.products:
+            name = prod.name.split()
+            self.assertIn(name[0], adjectives)
+            self.assertIn(name[1], nouns)
 
 if __name__ == '__main__':
     unittest.main()
